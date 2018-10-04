@@ -1,2 +1,2 @@
-# AirUv2.0 Software
+# AirUv2.0 Firmware
 
