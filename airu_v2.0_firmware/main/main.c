@@ -49,10 +49,6 @@ void app_main()
   esp_log_level_set(TAG_PM, ESP_LOG_INFO);
 
   PM_init();
-  
-
-  //Create a task to handler UART event from ISR
-  //xTaskCreate(vPM_task, "vPM_task", 2048, NULL, 12, NULL);
 
 
 }

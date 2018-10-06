@@ -10,13 +10,8 @@
 #ifndef _PM_IF_H
 #define _PM_IF_H
 
-#include <stdio.h>
-#include <string.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 #include "freertos/queue.h"
-#include "driver/uart.h"
-#include "esp_log.h"
+#include "esp_err.h"
 
 static const char *TAG_PM = "PM";
 
@@ -87,6 +82,16 @@ esp_err_t PM_init();
 *
 */
 esp_err_t PM_get_data();
+
+/*
+* @brief
+*
+* @param
+*
+* @return
+*
+*/
+esp_err_t PM_reset();
 
 
 

@@ -14,13 +14,19 @@
 * -  timer code may need to be in IRAM. NOTE: theres only 124K of IRAM.
 *
 */
-
+#include <stdio.h>
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/uart.h"
+#include "esp_log.h"
 #include "pm_if.h"
 
 
 /* Function prototypes */
 esp_err_t PM_init();
 esp_err_t PM_get_data();
+esp_err_t PM_reset();
 static void vPM_task(void *pvParameters);
 static esp_err_t get_packet_from_buffer();
 static esp_err_t get_data_from_packet(uint8_t *packet);
@@ -76,9 +82,24 @@ esp_err_t PM_init()
 esp_err_t PM_get_data()
 {
 
-	
+	/* not done yet */
+
 	get_packet_from_buffer();
 	pm_data.sample_count++;
+
+	return ESP_FAIL;
+}
+
+/*
+* @brief
+*
+* @param
+*
+* @return
+*
+*/
+esp_err_t PM_reset()
+{
 
 	return ESP_FAIL;
 }
