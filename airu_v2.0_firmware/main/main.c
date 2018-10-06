@@ -24,33 +24,41 @@
 #include "esp_log.h"
 
 #include "internet_if.h"
+#include "pm_if.h"
 
-/* The examples use simple WiFi configuration that you can set via
-   'make menuconfig'. */
+/* Global constants */
+
+/* Global vairables */
 
 
+/* Function prototypes */
+
+
+
+
+/*
+* @brief
+*
+* @param
+*
+* @return
+*
+*/
 void app_main()
 {
-    //Initialize NVS
-    esp_err_t ret = nvs_flash_init();
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES) 
-    {
-      ESP_ERROR_CHECK(nvs_flash_erase());
-      ret = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK(ret);
-    
-    // Initialize wifi to AP mode
-    ESP_LOGI(TAG, "ESP_WIFI_MODE_AP");
-    wifi_init_softap();
+  esp_log_level_set(TAG_PM, ESP_LOG_INFO);
 
+  PM_init();
+  
 
-    //vTaskDelay(3000);
-    //wifi_stop();
+  //Create a task to handler UART event from ISR
+  //xTaskCreate(vPM_task, "vPM_task", 2048, NULL, 12, NULL);
 
-    ESP_LOGI(TAG, "main ending...");
 
 }
+
+
+
 
 
 
