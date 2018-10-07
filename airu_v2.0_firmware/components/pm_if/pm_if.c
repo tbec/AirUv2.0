@@ -10,8 +10,8 @@
 *   To do:
 *
 * -  add a timer that clears the packet buffer every so often and maybe when you get data.
-* -	 put lock around the buffer when clearing it in the interupt handler
-* -  timer code may need to be in IRAM. NOTE: theres only 124K of IRAM.
+* -  finish reset function
+* -  finish get data function
 *
 */
 #include <stdio.h>
